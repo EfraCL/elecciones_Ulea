@@ -43,29 +43,3 @@ ggplot(x, aes(x = temp, y = cumsum(N_Mun_Aut_280523)))+
   theme_classic()
 ggsave("Histograma_acumulado_por_horas.png")
 
-# Distribucion de Poisson ----
-
-lambda <- mean(x$N_Mun_Aut_280523)
-
-## Gráfico de función de masa de Poisson ----
-x <- seq(0, 110, 1)
-prob <- dpois(x, lambda = lambda)
-temp <- data.frame(N_votantes = x, Probabilidad = prob)
-
-ggplot(temp, aes(x = N_votantes, y = Probabilidad))+
-  geom_line()
-
-## Gráfico de función acumulada de Poisson ----
-
-x <- seq(0, 110, 1)
-prob <- ppois(x, lambda = lambda)
-temp <- data.frame(N_votantes = x, Probabilidad = prob)
-
-ggplot(temp, aes(x = N_votantes, y = Probabilidad*100))+
-  geom_line()+
-  labs(x = "Número de votantes en 1 hora", y = "Probabilidad (%)")+
-  scale_x_continuous(breaks = seq(0, 110, 5))+
-  theme_classic()
-
-ppois(100, lambda = lambda) - ppois(35, lambda = lambda) # Prob de que en una hora vengan entre 100 y 35 votantes
-

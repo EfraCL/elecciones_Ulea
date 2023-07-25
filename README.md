@@ -2,7 +2,7 @@
 
 En este repositorio colgaré los datos relativos a la participación de los habitantes de Ulea en los procesos electorales de diferentes ámbitos administrativos: **comunitario**, **estatal**, **autonómico** y **municipal**.
 
-- En el fichero [*voto_horario_Ulea.csv*](https://github.com/EfraCL/elecciones_Ulea/blob/main/voto_horario_Ulea.csv) aparece el número de número de personas por hora que acudieron a votar en elecciones celebradas en Ulea, a partir del año 2023 (inclusive). 
+- En el fichero [*voto_horario_Ulea.csv*](https://github.com/EfraCL/elecciones_Ulea/blob/main/voto_horario_Ulea.csv) aparece el número de número de personas por hora que acudieron a votar en las diferentes elecciones celebradas en Ulea, a partir del año 2023 (inclusive). 
 
 - En el fichero [*info_general_elecciones_Ulea.csv*]() se muestran los datos relativos al censo electoral, el número de personas que acudieron a votar, el número de personas que votaron por correo y el número de fallecidos que incluye el censo.
 

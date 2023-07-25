@@ -10,10 +10,6 @@ colClas <- c("character", "character", "integer", "integer")
 x <- read.csv("voto_horario_Ulea.csv", header = T, sep = ";",
               colClasses = colClas)
 
-addline_format <- function(x,...){
-  gsub('\\s','\n',x)
-}
-
 
 # Formateo de datos ----
 
@@ -41,7 +37,8 @@ ggplot(temp, aes(x = Hora_int, y = Asistentes,
   scale_color_discrete(labels = c("Generales-23/7/23", "Mun&Auto-28/5/23"))+
   labs(title = "Asistencia de votantes por horas", color = "", x = "Hora", y = "Número de votantes")+
   geom_text_repel(aes(label = Asistentes), 
-            vjust = -.45, size = 3)+
+                  position = position_dodge(width = .1),
+                  vjust = .2, size = 3)+
   theme_classic()+
   theme(legend.position = "top",
         axis.text.x = element_text(size = 7, angle = 35,
@@ -62,8 +59,8 @@ temp%>%
   scale_color_discrete(labels = c("Generales-23/7/23", "Mun&Auto-28/5/23"))+
   labs(title = "Asistencia acumulada de votantes por horas", color = "", x = "Hora", y = "Número de votantes acumulado")+
   geom_text_repel(aes(label = Acumulado), 
-            position = position_dodge(width = 1.5), 
-            vjust = -.45, size = 3)+
+            position = position_dodge(width = .5), 
+            vjust = .2, size = 3)+
   theme_classic()+
   theme(legend.position = "top",
         axis.text.x = element_text(size = 7, angle = 35,

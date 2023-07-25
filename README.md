@@ -30,4 +30,4 @@ Se celebraron las siguientes elecciones:
 
 - Los datos del período 19:00:00 a 20:00:00 incluyen también los votos de los interventores (4) y los miembros de la mesa electoral (3).
 
-- Los datos **no** incluyen el número de votos por correo.
+- Los datos que aparecen en el fichero [*voto_horario_Ulea.csv*](https://github.com/EfraCL/elecciones_Ulea/blob/main/voto_horario_Ulea.csv) **no** incluyen el número de votos por correo.

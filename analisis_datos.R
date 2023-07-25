@@ -1,4 +1,5 @@
 # Carga de paquetes y datos ----
+set.seed(29)
 library(ggplot2)
 library(lubridate)
 library(tidyr)
@@ -20,8 +21,8 @@ x$Hora_int <- paste(format(x$Hora_ini, "%H:%M"),
                     sep = "-")
 #x$temp <- x$Hora_ini+(x$Hora_fin-x$Hora_ini)/2
 #x$temp <- seq(as.POSIXct("09:30:00", format = "%H:%M:%S"),
-              as.POSIXct("19:30:00", format = "%H:%M:%S"),
-              "1 hour")
+              #as.POSIXct("19:30:00", format = "%H:%M:%S"),
+              #"1 hour")
 x%>%
   gather("Elecciones", "Asistentes", -c(Hora_ini, Hora_fin, Hora_int)) -> temp
 
@@ -37,8 +38,8 @@ ggplot(temp, aes(x = Hora_int, y = Asistentes,
   scale_color_discrete(labels = c("Generales-23/7/23", "Mun&Auto-28/5/23"))+
   labs(title = "Asistencia de votantes por horas", color = "", x = "Hora", y = "Número de votantes")+
   geom_text_repel(aes(label = Asistentes), 
-                  position = position_dodge(width = .1),
-                  vjust = .2, size = 3)+
+                  position = position_dodge(width = 0), 
+                  vjust = 0, size = 3)+
   theme_classic()+
   theme(legend.position = "top",
         axis.text.x = element_text(size = 7, angle = 35,
@@ -59,8 +60,8 @@ temp%>%
   scale_color_discrete(labels = c("Generales-23/7/23", "Mun&Auto-28/5/23"))+
   labs(title = "Asistencia acumulada de votantes por horas", color = "", x = "Hora", y = "Número de votantes acumulado")+
   geom_text_repel(aes(label = Acumulado), 
-            position = position_dodge(width = .5), 
-            vjust = .2, size = 3)+
+            position = position_dodge(width = .8), 
+            vjust = -.65, size = 3)+
   theme_classic()+
   theme(legend.position = "top",
         axis.text.x = element_text(size = 7, angle = 35,
